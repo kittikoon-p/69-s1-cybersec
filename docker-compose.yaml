@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: 69-s1-db
+    ports:
+      
+"54327:5432"
+  environment:
+POSTGRES_PASSWORD=kittikoon@0911646466
+POSTGRES_USER=kittikoon
+POSTGRES_DB=kittikoon
+volumes:
+.data/data:/var/lib/postgresql/data
+
+  admin:
+    image: dpage/pgadmin4:latest
+    container_name: 69-s1-admin
+    ports:
+      
+"8080:80"
+  environment:
+PGADMIN_DEFAULT_EMAIL=kittikoon-p@rmutp.ac.th
+PGADMIN_DEFAULT_PASSWORD=kittikoon@0911646466
