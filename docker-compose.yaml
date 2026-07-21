@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: 69-s1-db
+    ports:
+      
+54327:5432
+  environment:
+POSTGRES_PASSWORD=kittikoon@0911646466
+POSTGRES_USER=kittikoon
+POSTGRES_DB=kittikoon,
+,
+volumes:
+./data:/var/lib/postgresql/data
