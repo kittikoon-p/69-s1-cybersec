@@ -3,9 +3,15 @@ POST http://localhost:9091/api/auth/local/register
 Content-Type: application/json
 
 {
+<<<<<<< HEAD
   "username": "kittikoon",
   "email": "kittikoon-p@rmutp.ac.th",
   "password": "kittikoon0911646466"
+=======
+  "username": "",
+  "email": "",
+  "password": ""
+>>>>>>> 34c7d9d (update api.http.simple)
 }
 
 ### 2. Login User 
@@ -13,8 +19,13 @@ POST http://localhost:9091/api/auth/local
 Content-Type: application/json
 
 {
+<<<<<<< HEAD
   "identifier": "kittikoon-p@rmutp.ac.th",
   "password": "kittikoon0911646466"
+=======
+  "identifier": "",
+  "password": ""
+>>>>>>> 34c7d9d (update api.http.simple)
 }
 
 ### 3. Login Admin 
@@ -22,8 +33,13 @@ POST http://localhost:9091/admin/login
 Content-Type: application/json
 
 {
+<<<<<<< HEAD
   "email": "kittikoon-p@rmutp.ac.th",
   "password": "kittikoon0911646466",
+=======
+  "email": "",
+  "password": "",
+>>>>>>> 34c7d9d (update api.http.simple)
   "rememberMe": false
 }
 
@@ -32,7 +48,11 @@ POST http://localhost:9091/api/auth/forgot-password
 Content-Type: application/json
 
 {
+<<<<<<< HEAD
   "email": "kittikoon-p@rmutp.ac.th"
+=======
+  "email": ""
+>>>>>>> 34c7d9d (update api.http.simple)
 }
 
 ### 5. Profile
