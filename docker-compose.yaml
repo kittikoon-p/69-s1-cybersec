@@ -21,7 +21,7 @@
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
 
   app:
-    image: prawee/strapi
+    build: .
     container_name: 69-s1-app
     ports:
       - ${APP_PORT}:1337
@@ -31,6 +31,20 @@
       - DATABASE_NAME=${DATABASE_NAME}
       - DATABASE_USERNAME=${DATABASE_USERNAME}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - MAILHOG_HOST=${MAILHOG_HOST}
+      - MAILHOG_PORT=${MAILHOG_PORT}
+    depends_on:
+      - db
+      - mailhog
+    volumes:
+      - ./config/plugins.js:/opt/app/config/plugins.js
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: 69-s1-mailhog
+    ports:
+      - ${MAILHOG_SMTP_PORT}:1025
+      - ${MAILHOG_UI_PORT}:8025
 
 volumes:
   data-postgres:
