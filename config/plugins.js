@@ -3,20 +3,17 @@ module.exports = ({ env }) => ({
     config: {
       provider: 'nodemailer',
       providerOptions: {
-        host: env('MAILHOG_HOST', 'mailhog'),
-        port: env.int('MAILHOG_PORT', 1025),
-        secure: false,
+        host: env('SMTP_HOST', 'smtp.gmail.com'),
+        port: env.int('SMTP_PORT', 465),
+        secure: true,
         auth: {
-          user: env('MAILHOG_USER', 'mailhog'),
-          pass: env('MAILHOG_PASS', 'mailhog'),
-        },
-        tls: {
-          rejectUnauthorized: false,
+          user: env('SMTP_USER'),
+          pass: env('SMTP_PASS'),
         },
       },
       settings: {
-        defaultFrom: 'no-reply@localhost',
-        defaultReplyTo: 'no-reply@localhost',
+        defaultFrom: env('SMTP_FROM', env('SMTP_USER', 'no-reply@localhost')),
+        defaultReplyTo: env('SMTP_USER', 'no-reply@localhost'),
       },
     },
   },

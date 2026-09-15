@@ -33,11 +33,19 @@
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - MAILHOG_HOST=${MAILHOG_HOST}
       - MAILHOG_PORT=${MAILHOG_PORT}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+      - SMTP_FROM=${SMTP_FROM}
     depends_on:
       - db
       - mailhog
     volumes:
       - ./config/plugins.js:/opt/app/config/plugins.js
+      - ./config/admin.js:/opt/app/config/admin.js
+      - ./config/server.js:/opt/app/config/server.js
+      - ./src:/opt/app/src
 
   mailhog:
     image: mailhog/mailhog
