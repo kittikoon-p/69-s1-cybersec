@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### 1.2 Signup / Register 
-POST http://localhost:9091/api/admin/register
+POST http://localhost:9091/admin/register-admin
 Content-Type: application/json
 
 {
