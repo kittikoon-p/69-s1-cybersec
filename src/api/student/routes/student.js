@@ -4,6 +4,16 @@
  * student router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
-
-module.exports = createCoreRouter('api::student.student');
+module.exports = {
+  routes: [
+    {
+      method: 'GET',
+      path: '/students',
+      handler: 'student.find',
+      config: {
+        policies: [],
+        middlewares: [],
+      },
+    },
+  ],
+};

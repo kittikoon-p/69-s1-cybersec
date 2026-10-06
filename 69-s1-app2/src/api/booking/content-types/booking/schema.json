@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bookings",
+  "info": {
+    "singularName": "booking",
+    "pluralName": "bookings",
+    "displayName": "booking"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "customer_name": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "text",
+      "required": true
+    },
+    "national_id": {
+      "type": "text",
+      "required": true
+    },
+    "car_plate": {
+      "type": "string",
+      "required": true
+    },
+    "booking_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "integrity_hash": {
+      "type": "string"
+    }
+  }
+}
